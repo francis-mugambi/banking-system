@@ -1,0 +1,21 @@
+
+{% extends "home/base2.html" %}
+{% load static %}
+{% block title %}Transactions {% endblock %}
+
+{% block content %}
+<div class="m-4">
+<h2>Transactions</h2> <span onclick="window.print()" class="btn btn-success">Print Receipt</span>
+
+<h3>Your Deposit History</h3>
+{% for deposit in deposits %}
+<p><span class="text-danger">Date:</span> {{deposit.date_of_deposit}}, <span class="text-danger">Amount:</span>{{deposit.amount_deposited}} </p><hr>
+{% endfor %}
+
+<h3>Your Withdraw History</h3>
+{% for withdraw in withdraws %}
+<p><span class="text-danger">Date:</span>  {{withdraw.date_of_withdraw}}, <span class="text-danger">Transaction cost:</span> {{withdraw.transaction_cost}}, <span class="text-danger">Amount:</span> {{withdraw.amount_withdrawn}}</p><hr>
+
+{% endfor %}
+</div>
+{% endblock %}

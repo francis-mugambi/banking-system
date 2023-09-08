@@ -1,0 +1,19 @@
+
+{% extends "home/base2.html" %}
+{% load static %}
+{% block title %}Withdraw Funds {% endblock %}
+
+{% block content %}
+<div class="m-4">
+<h2>Withdraw Funds</h2>
+<span style="color: red; font-weight:bold;">{{msg1}}</span><br>
+{% for message in messages %}
+<span style="color: red; font-weight:bold;">{{message}}</span><br>
+{% endfor %}
+<form action="" method="post">
+{% csrf_token %}
+Enter the amount: <input type="number" name="withdraw">
+<button type="submit">Withdraw</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+
+{% extends "home/base2.html" %}
+{% load static %}
+{% block title %}Profile Update {% endblock %}
+
+{% block content %}
+
+            <div class="container-fluid">
+               <h5 class="mb-4">Account Number: {{account.account_number}}</h5>
+                <!-- Row -->
+                <div class="row">
+                    <span style="color: red; font-weight:bold;">{{msg1}}</span>
+                    {% for message in messages %}
+                    <span style="color: red; font-weight:bold;">{{message}}</span>
+                    {% endfor %}
+                </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="row">
+                    <div class="col-lg-12 col-xlg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">                               
+                                <form class="form-horizontal form-material mx-2" action="" method="POST">
+                                {% csrf_token %}
+                                
+                                <div class="row">
+                                    
+                                    <div class="col-md-6 form-group">
+                                        <label class="mb-0">First Name <span class="text-danger">*</span></label>
+                                        <div class="">
+                                            <input type="text" name = "first_name" value="{{user.first_name}}"
+                                                class="form-control ps-0 form-control-line" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class=" mb-0">Middle Name</label>
+                                        <div class="">
+                                            <input type="text" name = "middle_name" value="{{user.middle_name}}"
+                                                class="form-control ps-0 form-control-line">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="mb-0">Last Name <span class="text-danger">*</span></label>
+                                        <div class="">
+                                            <input type="text" name = "last_name" value="{{user.last_name}}"
+                                                class="form-control ps-0 form-control-line" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label for="example-email" class="">Email <span class="text-danger">*</span></label>
+                                        <div class="">
+                                            <input type="email" name ="email" value="{{user.email}}"
+                                                class="form-control ps-0 form-control-line"
+                                                id="example-email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="mb-0">Id Number <span class="text-danger">*</span></label>
+                                        <div class="">
+                                            <input ype="tel" name = "id_number" value="{{user.id_number}}"
+                                                class="form-control ps-0 form-control-line" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="mb-0">Phone<span class="text-danger">*</span></label>
+                                        <div class="">
+                                            <input type="tel" name ="phone" value="{{user.phone}}"
+                                                class="form-control ps-0 form-control-line p-4" required>
+                                        </div>
+                                    </div>
+                                </div>                                
+
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-12 d-flex">                                            
+                                            <button type="submit" style="background-color: rgb(131, 10, 10);"
+                                             class="btn mx-auto mx-md-0 text-white">Update Profile</button>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+              
+            </div>
+                    
+{% endblock %}

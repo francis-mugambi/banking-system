@@ -1,0 +1,11 @@
+
+{% extends "home/base2.html" %}
+{% load static %}
+{% block title %}Check Balance {% endblock %}
+
+{% block content %}
+<div class="m-4">
+    <h3>Account Number: {{balance.account_number}}</h3>
+    <h5>Your Balance is: <span class="btn btn-success text-white">{{balance.balance}}</span></h5>
+</div>
+{% endblock %}

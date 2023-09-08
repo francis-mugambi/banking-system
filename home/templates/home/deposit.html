@@ -1,0 +1,20 @@
+
+{% extends "home/base2.html" %}
+{% load static %}
+{% block title %}Deposit Funds {% endblock %}
+
+{% block content %}
+<div class="m-4">
+    <h2>Add Funds</h2>
+    <span style="color: red; font-weight:bold;margin-bottom: 20px;">{{msg1}}</span>
+    {% for message in messages %}
+    <span style="color: red; font-weight:bold;margin-bottom: 20px;">{{message}}</span>
+    {% endfor %}
+    <form action="" method="post">
+    {% csrf_token %}
+    Enter the amount: <input type="number" name="add_funds">
+    <button type="submit">Deposit</button>
+    </form>
+
+</div>
+{% endblock %}
